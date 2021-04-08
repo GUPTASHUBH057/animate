@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+header {
+    width: 100%;
+    height: 70px;
+    z-index: 997;
+    transition: all 0.5s;
+    position: fixed;
+}
+
+#header.header-scrolled {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    width: 100%;
+}
+
+.nav-brand {
+    font-size: 20px !important;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    padding: 10px 0px;
+    color: #fff;
+    margin-right: 0;
+}
+
+.menu-icons i {
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-list {
+    width: 25rem;
+    height: 100vh;
+    /* background-color: rgba(24,24,24,0.9); */
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-item {
+    margin: 1.5rem 0;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item a {
+    color: #fff;
+    padding: 0.4rem 0;
+    font-size: 20px;
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.nav-item a::before,
+.nav-item a::after {
+    content: '';
+    height: 3px;
+    position: absolute;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-color: #22c2e6;
+    width: 0;
+}
+
+.nav-item a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-item a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-item a:hover:before,
+.nav-item .current a:before,
+.nav-item a:hover:after,
+.nav-item .current a:after {
+    width: 100%;
+}
+
+
+/**/
+
+.nav-list.active {
+    right: 0;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+    nav {
+        padding: 0;
+    }
+    .nav-list {
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        position: initial;
+        top: initial;
+        right: initial;
+        flex-direction: row;
+        transition: initial;
+    }
+    .menu-icons {
+        display: none;
+    }
+    .nav-item {
+        margin: 20px 13px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .nav-list {
+        width: 18rem !important;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .nav-list {
+        width: 15rem !important;
+    }
+}
